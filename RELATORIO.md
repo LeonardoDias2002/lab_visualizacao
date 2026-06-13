@@ -1,64 +1,36 @@
 # Relatório
 
-> [!CAUTION]
->
-> - Você <ins>**não pode utilizar ferramentas de IA para escrever este relatório**</ins>.
-
 ## Identificação
 
-- **Nome**: <mark>`<preencher>`</mark>
-- **Cartão UFRGS:** <mark>`<preencher>`</mark>
+- **Nome**: Leonardo Leal Linhares Dias
+- **Cartão UFRGS:** 326011
 
 ## Dados utilizados
 
-> [!IMPORTANT]
->
-> - Os dados utilizados devem ser informados como **links** para as fontes originais.
-> - Se houver mais de um conjunto de dados, liste todos separadamente.
-> - Para cada conjunto de dados, inclua também uma **descrição curta** explicando os dados.
-
-1. **Dataset 1**: <mark>`<link>`</mark>
-    * **Descrição curta**: <mark>`<preencher>`</mark>
-2. **Dataset 2**: <mark>`<link>`</mark>
-    * **Descrição curta**: <mark>`<preencher>`</mark>
-3. ...
+1. **Dataset English Premier League**: <https://datahub.io/football/english-premier-league>
+    * **Descrição curta**: Dados estatísticos de todas as 380 partidas da primeira divisão inglesa (Premier League) em diversas temporadas, para esse laboraório, foram usados especificamente os dados das temporadas 2018/2019 (temporada regular) e 2020/2021 (temporada em que as primeiras 36 rodadas foram jogadas com portões fechados, em decorrência da pandemia de COVID-19).
 
 ## Código-fonte da visualização
 
-> [!IMPORTANT]
->
-> - Indique abaixo onde está, dentro deste repositório, o código-fonte usado para gerar a visualização.
-
-- **Arquivo principal**: <mark>`<preencher>`</mark>
-- **Arquivos complementares (se houver)**: <mark>`<preencher>`</mark>
+- **Arquivo principal**: [plot.ipynb](plot.ipynb)
 
 ## Imagem da visualização gerada
 
-> [!IMPORTANT]
->
-> - Insira aqui uma imagem da visualização criada por você. Troque `imagem-da-visualizacao.png` pelo caminho correto do arquivo no repositório. 
-> - Se você criou alguma visualização interativa, então descreva aqui como acessá-la. Por exemplo, se for uma página HTML, coloque o link, ou se for uma visualização 3D, descreva como compilar e executar o código. 
+![Visualização resultante 1](fatorcasaPL.svg)
 
-<mark>`<preencher abaixo>`</mark>
-
-![Visualização resultante](imagem-da-visualizacao.png)
+***Observação:*** A imagem abaixo é um registro estático da visualização. Por se tratar de um painel exploratório interativo construído com a biblioteca Altair, a interação completa pode ser acessada executando as células do notebook plot.ipynb no Jupyter ou Google Colab.
+![Visualização resultante 2](dispersao.svg)
 
 ## Descrição da visualização
 
 ### Legenda (*caption*)
 
-> [!IMPORTANT]
->
-> - Escreva um texto curto explicando como interpretar a visualização. Descreva os elementos visuais, eixos, cores, símbolos ou interações relevantes.
-> - Este texto seria a legenda (*caption*) que acompanharia a figura em uma publicação, por exemplo.
-
-<mark>`<preencher>`</mark>
+A visualização é dividida em duas partes complementares. A primeira consiste em um painel de gráficos de barras que compara as médias por partida de variáveis ofensivas (Gols e Finalizações) e disciplinares (Faltas Cometidas e Cartões Amarelos) entre times mandantes (azul) e visitantes (laranja) nas temporadas 18/19 e 20/21. A segunda parte apresenta um painel interativo de gráficos de dispersão, onde o eixo horizontal representa a média de gols em casa e o vertical, a média de gols fora. Uma linha de referência pontilhada vermelha (y=x) demarca o equilíbrio ofensivo (um time que tem média de gols fora de casa igual a média de gols em casa). A interação com o cursor aciona uma seleção vinculada: ao repousar sobre um clube, o ponto correspondente é destacado simultaneamente em ambas as temporadas, exibindo um rótulo flutuante em texto com os valores de cada média e o nome do clube.
 
 ### Conclusão demonstrada pela visualização
 
-> [!IMPORTANT]
->
-> - Escreva uma conclusão curta sobre os dados com base na visualização.
-> - Explique qual insight, padrão ou tendência pode ser observado.
+Através do painel de barras, notamos dois padrões na temporada sem torcida (20/21). Primeiro, o ímpeto ofensivo do mandante decaiu, com uma redução considerável de finalizações. Segundo, houve uma inversão no cenário disciplinar: na presença do público (18/19), o time da casa cometia menos faltas e recebia menos cartões amarelos. Sem a pressão das arquibancadas, o mandante passou a cometer mais faltas que o visitante (saltando de 10.15 para 11.22 por jogo), e a disparidade nos cartões desapareceu. Isso evidencia que a torcida atua inibindo as infrações do próprio time e, possivelmente, influenciando o árbitro a ser mais indulgente com os donos da casa.
 
-<mark>`<preencher>`</mark>
+Esse esvaziamento do fator casa é confirmado pelo gráfico de dispersão interativo. Na temporada 18/19, a vasta maioria dos clubes encontra-se abaixo da bissetriz, marcando muito gols em seus domínios. Já na temporada 20/21, observa-se um fenômeno de convergência dos pontos em direção à linha de equilíbrio. Clubes que antes possuíam uma significativa disparidade ofensiva tiveram suas médias aproximadas, comprovando graficamente que a ausência do público neutralizou as vantagens de se jogar em casa.
+
+Portanto, conclui-se que o "fator casa" na Premier League é fortemente impulsionado pela presença da torcida no estádio, não se tratando apenas do conforto ou conhecimento do próprio campo.
